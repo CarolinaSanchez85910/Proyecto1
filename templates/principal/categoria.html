@@ -1,0 +1,19 @@
+<!-- principal/templates/principal/categoria.html -->
+{% extends 'principal/base.html' %}
+
+{% block title %}Servicios de {{ categoria.nombre }}{% endblock %}
+
+{% block content %}
+<h2>{{ categoria.nombre }}</h2>
+<ul>
+    {% for servicio in servicios %}
+    <li>
+        <a href="{% url 'detalle_servicio' servicio.id %}">{{ servicio.nombre }}</a> - ${{ servicio.precio }}
+        <a href="{% url 'agregar_al_carrito' servicio.id %}">Agregar al Carrito</a>
+    </li>
+    {% empty %}
+    <p>No hay servicios disponibles en esta categoría.</p>
+    {% endfor %}
+</ul>
+{% endblock %}
+

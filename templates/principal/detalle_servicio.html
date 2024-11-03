@@ -1,0 +1,18 @@
+<!-- servicios/templates/servicios/detalle_servicio.html -->
+{% load static %}
+{% extends 'principal/base.html' %}
+
+{% block title %}{{ servicio.nombre }}{% endblock %}
+
+{% block content %}
+<h2>{{ servicio.nombre }}</h2>
+<p>{{ servicio.descripcion }}</p>
+<p>Duración: {{ servicio.duracion }}</p>
+<p>Precio: ${{ servicio.precio }}</p>
+
+<form method="post" action="{% url 'crear_reserva' servicio.id %}">
+    {% csrf_token %}
+    <button type="submit">Reservar este servicio</button>
+</form>
+{% endblock %}
+

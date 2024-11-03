@@ -1,0 +1,68 @@
+/* Colores principales */
+:root {
+    --morado: #781e9c;
+    --rosado: #ff51b5;
+    --texto: #ffffff;
+    --fondo: #121212;
+}
+
+/* Ajuste para el body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: var(--morado);
+    color: var(--texto);
+    position: fixed;
+    height: 100%;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    color: var(--rosado);
+}
+
+.menu-categorias li {
+    list-style: none;
+    margin: 15px 0;
+}
+
+.menu-categorias a {
+    color: var(--texto);  /* Cambiado a blanco */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-categorias a:hover {
+    color: var(--rosado);  /* Efecto hover en rosado */
+}
+
+/* Main content */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.topbar nav a {
+    color: var(--texto);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.topbar nav a:hover {
+    color: var(--rosado);
+}
+
+.content {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+}
+

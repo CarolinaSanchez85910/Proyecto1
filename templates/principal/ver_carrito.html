@@ -1,0 +1,39 @@
+<!-- principal/templates/principal/ver_carrito.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+</head>
+<body>
+    <h2>Carrito de Compras</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Servicio</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in carrito.items.all %}
+            <tr>
+                <td>{{ item.servicio.nombre }}</td>
+                <td>${{ item.servicio.precio }}</td>
+                <td>{{ item.cantidad }}</td>
+                <td>${{ item.subtotal }}</td>
+                <td>
+                    <a href="{% url 'eliminar_del_carrito' item.id %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Total: ${{ carrito.total }}</p>
+    <a href="#">Proceder a Pagar</a> <!-- Aquí iría un enlace a la pasarela de pago -->
+</body>
+</html>
+

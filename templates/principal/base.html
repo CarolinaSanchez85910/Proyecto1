@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}WellNesShub{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'principal/css/styles.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Wellnes Shub</h2>
+        <ul class="menu-categorias">
+            {% for categoria in categorias %}
+            <li>
+                <a href="{% url 'categoria' categoria.id %}">{{ categoria.nombre }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="footer-sidebar">
+            <p>© 2024 Universidad Piloto de Colombia</p>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <nav>
+                <a href="{% url 'inicio' %}">Home</a>
+                <a href="#">Buscar</a>
+                <a href="#">Regístrate</a>
+                <a href="#">Contáctanos</a>
+            </nav>
+        </div>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>
+
